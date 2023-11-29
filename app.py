@@ -58,7 +58,7 @@ def play_game(user_choice):
     #return the winner
     return winner
 
-#function to keep the score of the game and another function to return the score
+#function to play the game multiple times
 def main():
     #set the initial score to 0
     score = 0
@@ -66,17 +66,17 @@ def main():
     #play the game while the user wants to play using a do while
     while True:
         #ask the user if they want to play the game
-        play_again = input("Would you like to play rock, paper, scissors? ")
+        play_again = input("Would you like to play rock, paper, scissors? (yes / no)").lower()
         while play_again not in ["yes", "no"]:
-            #if the user says no, break out of the loop
+            # if the user says no, break out of the loop
             if play_again == "no":
                 break
-            #if the user says yes, continue the loop
+            # if the user says yes, continue the loop
             elif play_again == "yes":
                 continue
-            #if the user enters anything else, ask them again
+            # if the user enters anything else, ask them again
             else:
-                play_again = input("Invalid choice. Please enter yes or no: ")
+                play_again = input("Invalid choice. Please enter yes or no: ").lower()
         
         #if the user says no, break out of the loop
         if play_again == "no" :
@@ -90,10 +90,10 @@ def main():
         #show the current round number
         print("Round " + str(round) )
         #the user choice is entered by the user
-        user_choice = input("Enter rock, paper, or scissors: ")
+        user_choice = input("Enter 'rock', 'paper', or 'scissors': ").lower()
         #validate the user choice
         while user_choice not in OPTIONS:
-            user_choice = input("Invalid choice. Please enter rock, paper, or scissors: ")
+            user_choice = input("Invalid choice. Please enter 'rock', 'paper', or 'scissors': ").lower()
         #determine the winner
         winner = play_game(user_choice)
         #if the user wins, add 1 to the score
